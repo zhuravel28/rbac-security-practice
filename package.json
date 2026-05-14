@@ -1,0 +1,27 @@
+{
+  "name": "rbac-security-practice",
+  "version": "1.0.0",
+  "description": "Практична робота 3: RBAC та безпека авторизації",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "jest"
+  },
+  "keywords": [
+    "rbac",
+    "authorization",
+    "security",
+    "idor",
+    "jest",
+    "supertest"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  }
+}
