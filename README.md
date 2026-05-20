@@ -34,17 +34,6 @@
 - `corporate`
 - `confidential`
 
-## Матриця дозволів
-
-| Операція | admin | manager | employee | guest |
-|---|---|---|---|---|
-| Читати public | Так | Так | Так | Так |
-| Читати corporate | Так | Так | Так | Ні |
-| Читати confidential | Так | Так | Ні | Ні |
-| Створити файл | Так | Так | Так | Ні |
-| Видалити свій файл | Так | Так | Так | Ні |
-| Видалити будь-який файл | Так | Ні | Ні | Ні |
-| Змінити рівень доступу | Так | Так | Ні | Ні |
 
 ## Реалізовано
 
@@ -57,63 +46,7 @@
 - захист від privilege escalation;
 - автоматизовані тести Jest + Supertest.
 
-## Основні API endpoints
 
-```http
-GET /
-```
-
-Перевірка роботи API.
-
-```http
-GET /me
-Header: x-user-id
-```
-
-Отримати поточного користувача.
-
-```http
-GET /files/:id
-Header: x-user-id
-```
-
-Отримати файл за ID.
-
-```http
-POST /files
-Header: x-user-id
-Body:
-{
-  "name": "file.txt",
-  "accessLevel": "corporate"
-}
-```
-
-Створити файл.
-
-```http
-DELETE /files/:id
-Header: x-user-id
-```
-
-Видалити файл.
-
-```http
-PATCH /files/:id/access
-Header: x-user-id
-Body:
-{
-  "accessLevel": "confidential"
-}
-```
-
-Змінити рівень доступу файлу.
-
-```http
-PATCH /users/:id/role
-```
-
-Спроба зміни ролі. Повертає `403`, щоб запобігти privilege escalation.
 
 ## Захист від IDOR
 
